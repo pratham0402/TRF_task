@@ -53,112 +53,93 @@
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>
-       Weather Report 
-    </title>
-    <meta name="viewport" content ="width-device-width, initial-scale=1.0">
-    <meta name="Topic" content="Weather Report"/>
-    <link rel="stylesheet" href="weatherreports.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weatherreport.css">
     <link rel='icon' href='images/weather.jpg'>
-    <style>
-      body{
-        background-image: url('images/light.jpg');
-        background-size: cover ;
-        background-position: 50% 50%;
-
-      }
-    </style>
-    </head>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
 <body>
-    
-     <h1 style="text-align: center; color: blanchedalmond;">Weather Report</h1>
-     <div>
+    <div class="today">
+    <p><h4><b><?php echo $city_name."  ".$country; ?></b></h4></p>
+    <p><?php 
+         if ($day1_icon == 'Rain'){
+            echo "<i class='fa fa-bolt' aria-hidden='true'></i>";
+         }
+         elseif ($day1_icon == 'Clear') {
+            echo "<i class='fa fa-sun-o' aria-hidden='true'></i>";
+         }
+         else {
+            echo "<i class='fa fa-cloud' aria-hidden='true'></i>";
+         }
+    ?></p>
+    <p><?php echo "Temperature: ".$day1_temp." °C"; 
+            if ($day1_temp < 0) {
+                echo "  <i class='fa fa-thermometer-empty' aria-hidden='true'></i>";
+            }
+            elseif ($day1_temp > 0 and $day1_temp < 15) {
+                echo "  <i class='fa fa-thermometer-quarter' aria-hidden='true'></i>";
+            }
+            elseif ($day1_temp > 15 and $day1_temp < 30) {
+                echo "  <i class='fa fa-thermometer-half' aria-hidden='true'></i>";
+            }
+            elseif ($day1_temp > 30 and $day1_temp < 45) {
+                echo "  <i class='fa fa-thermometer-three-quarters' aria-hidden='true'></i>";
+            }
+            else {
+                echo "  <i class='fa fa-thermometer-full' aria-hidden='true'></i>";
+            }
+    ?></p>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="block">
 
-  
-     <div class="jumbotron" style="margin-bottom: 0px; color: white; background-color: aqua;">
-        <br>
-        
-        <div class="row">
-          <h3   >Weather Report for </h3>
-          <div class="col-md-12" style="padding-left:0px;padding-right:0px;">
-            <div class="single bordered" style="padding-bottom:25px;background:url('images/back.jpg') no-repeat ;border-top:0px;background-size: cover; backface-visibility: hidden;">
-              <div class="row">
-                <div class="col-sm-9" style="font-size:20px;text-align:left;padding-left:70px;">
-                  <p class="aqi-value"></p>
-                  <p class="weather-icon">
-                    <img style="margin-left:-10px;" src=>
-                   
-                  </p>
-                  <div class="today" style="margin-bottom: 0px;">
-                  <p><h4><b><?php echo $city_name."  ".$country; ?></b></h4></p>
-                  <p><?php 
-                  if ($day1_icon == 'Rain'){
-                    echo "<i class='fa fa-bolt' aria-hidden='true'></i>";
-                  }
-                  elseif ($day1_icon == 'Clear') {
-                    echo "<i class='fa fa-sun-o' aria-hidden='true'></i>";
-                  }
-                  else {
-                    echo "<i class='fa fa-cloud' aria-hidden='true'></i>";
-                  }
-                  ?></p>
-                <p><?php echo "Temperature: ".$day1_temp." °C"; ?></p>
-
-                <div class="block">
-                  <div class="rem">
-                    <p><?php echo $day1_icon; ?></p>
-                    <p><?php echo "Temperature: ".$day1_temp."°C"; ?></p>
-                    <p><?php echo "Humidity:  ".$day1_humi ;?></p>
-                    <p><?php echo "Pressure:  ".$day1_pressure." Pa" ?></p>
-                    <p><?php echo "Date and Time:  ".$day1_date; ?></p>
-                  </div>
-
-                  <div class="rem">
-                    <p><?php echo $day2_icon; ?></p>
-                    <p><?php echo "Temperature: ".$day2_temp." °C"; ?></p>
-                    <p><?php echo "Humidity:  ".$day2_humi ;?></p>
-                    <p><?php echo "Pressure:  ".$day2_pressure." Pa" ?></p>
-                    <p><?php echo "Date and Time:  ".$day2_date; ?></p>
-                  </div>
-
-                  <div class="rem">
-                    <p><?php echo $day3_icon; ?></p>
-                    <p><?php echo "Temperature: ".$day3_temp."°C"; ?></p>
-                    <p><?php echo "Humidity:  ".$day3_humi ;?></p>
-                    <p><?php echo "Pressure:  ".$day3_pressure." Pa" ?></p>
-                    <p><?php echo "Date and Time:  ".$day3_date; ?></p>
-                  </div>
-
-                  <div class="rem">
-                    <p><?php echo $day4_icon; ?></p>
-                    <p><?php echo "Temperature: ".$day4_temp."°C"; ?></p>
-                    <p><?php echo "Humidity:  ".$day4_humi ;?></p>
-                    <p><?php echo "Pressure:  ".$day4_pressure." Pa" ?></p>
-                  <p><?php echo "Date and Time:  ".$day4_date; ?></p>
-                  </div>
-
-                  <div class="rem">
-                    <p><?php echo $day5_icon; ?></p>
-                    <p><?php echo "Temperature: ".$day5_temp."°C"; ?></p>
-                    <p><?php echo "Humidity:  ".$day5_humi ;?></p>
-                    <p><?php echo "Pressure:  ".$day5_pressure." Pa" ?></p>
-                    <p><?php echo "Date and Time:  ".$day5_date; ?></p>
-                  </div>
-
-                </div>
-
-                </div>
-                </div>
-                </div>
-                </div>
-          </div>
+        <div class="rem">
+        <p><?php echo $day1_icon; ?></p>
+        <p><?php echo "Temperature: ".$day1_temp."°C"; ?></p>
+        <p><?php echo "Humidity:  ".$day1_humi ;?></p>
+        <p><?php echo "Pressure:  ".$day1_pressure." Pa" ?></p>
+        <p><?php echo "D/T:  ".$day1_date; ?></p>
         </div>
-        <br><br>
-        
+
+        <div class="rem">
+        <p><?php echo $day2_icon; ?></p>
+        <p><?php echo "Temperature: ".$day2_temp." °C"; ?></p>
+        <p><?php echo "Humidity:  ".$day2_humi ;?></p>
+        <p><?php echo "Pressure:  ".$day2_pressure." Pa" ?></p>
+        <p><?php echo "D/T:  ".$day2_date; ?></p>
+        </div>
+
+        <div class="rem">
+        <p><?php echo $day3_icon; ?></p>
+        <p><?php echo "Temperature: ".$day3_temp."°C"; ?></p>
+        <p><?php echo "Humidity:  ".$day3_humi ;?></p>
+        <p><?php echo "Pressure:  ".$day3_pressure." Pa" ?></p>
+        <p><?php echo "D/T:  ".$day3_date; ?></p>
+        </div>
+
+        <div class="rem">
+        <p><?php echo $day4_icon; ?></p>
+        <p><?php echo "Temperature: ".$day4_temp."°C"; ?></p>
+        <p><?php echo "Humidity:  ".$day4_humi ;?></p>
+        <p><?php echo "Pressure:  ".$day4_pressure." Pa" ?></p>
+        <p><?php echo "D/T:  ".$day4_date; ?></p>
+        </div>
+
+        <div class="rem">
+        <p><?php echo $day5_icon; ?></p>
+        <p><?php echo "Temperature: ".$day5_temp."°C"; ?></p>
+        <p><?php echo "Humidity:  ".$day5_humi ;?></p>
+        <p><?php echo "Pressure:  ".$day5_pressure." Pa" ?></p>
+        <p><?php echo "D/T:  ".$day5_date; ?></p>
+        </div>
+
+    </div>
+
 </body>
 </html>

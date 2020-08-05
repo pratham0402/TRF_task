@@ -29,6 +29,8 @@ input[type="text"]{
     margin-right: -15px;
     margin-left: -15px;
 }
+
+
 .form-inline {
     text-align: center;
     flex-flow: row wrap;

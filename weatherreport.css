@@ -1,23 +1,27 @@
 body{
-    background-color: aquamarine;
+    background: url("images/bg4.jpg") fixed no-repeat;
     padding: 10px;
+
 }
 
 .today{
     
     width: fit-content;
     font-size: 40px;
-
+    color: white;
 }
 
 .rem{
     display: inline-block;
-    
     width: fit-content;
+    padding: 32px;
+    font-size: 18px;
+    color: yellow;
 
-    padding: 10px;
+
 }
 
 .block{
-    padding: 20px;
+    padding: 40px;
+    margin-left: 40px;
 }
