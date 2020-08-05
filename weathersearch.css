@@ -1,0 +1,37 @@
+#rowDiv{
+    text-align: center;
+    width: 100%;
+
+}
+input[type="text"]{
+    height: 40px;
+    font-size: 20px;
+}
+
+#submitWeather{
+    height: 40px;
+    font-weight: bold;
+}
+
+.container{
+    position: absolute;
+    float: left;
+}
+#mydiv{
+    
+    top: 50%;
+    left: 50%;
+   
+}
+.row {
+    text-align: center;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.form-inline {
+    text-align: center;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+}

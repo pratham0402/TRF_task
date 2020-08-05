@@ -1,0 +1,23 @@
+body{
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.today{
+    
+    width: fit-content;
+    font-size: 40px;
+
+}
+
+.rem{
+    display: inline-block;
+    
+    width: fit-content;
+
+    padding: 10px;
+}
+
+.block{
+    padding: 20px;
+}
